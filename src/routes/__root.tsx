@@ -10,9 +10,11 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import { FloatingWhatsApp } from "../components/FloatingWhatsApp";
 import { SiteHeader } from "../components/SiteHeader";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { BEHANCE, WHATSAPP } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -95,9 +97,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Rubik:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -128,8 +133,19 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <SiteHeader />
       <Outlet />
-      <footer className="border-t border-border py-8 text-center font-mono text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Salv Digital Assessoria
+      <FloatingWhatsApp />
+      <footer className="border-t border-border">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 font-mono text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} Salv Digital Assessoria</span>
+          <span className="flex gap-5">
+            <a href={BEHANCE} target="_blank" rel="noreferrer" className="transition hover:text-foreground">
+              Behance
+            </a>
+            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="transition hover:text-foreground">
+              WhatsApp
+            </a>
+          </span>
+        </div>
       </footer>
     </QueryClientProvider>
   );

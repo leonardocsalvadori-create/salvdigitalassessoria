@@ -21,7 +21,7 @@
  * The @theme inline block maps CSS custom properties to Tailwind utility
  * classes (e.g. --color-primary -> bg-primary, text-primary).
  *
- * The :root and .dark blocks define the actual color values using oklch.
+ * The :root block defines the actual color values using oklch.
  * All colors MUST use oklch format.
  *
  * To add a new semantic color:
@@ -64,6 +64,12 @@
   --color-chart-5: var(--chart-5);
   --font-mono: "Space Mono", monospace;
   --font-sans: "Rubik", sans-serif;
+  --font-display: "Archivo", "Rubik", sans-serif;
+  --color-paper: var(--paper);
+  --color-paper-foreground: var(--paper-foreground);
+  --color-paper-muted: var(--paper-muted);
+  --color-paper-border: var(--paper-border);
+  --color-paper-card: var(--paper-card);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -72,30 +78,52 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --animate-marquee: marquee 55s linear infinite;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.17 0.05 255);
-  --foreground: oklch(0.96 0.02 230);
-  --card: oklch(0.22 0.06 255);
-  --card-foreground: oklch(0.96 0.02 230);
-  --popover: oklch(0.22 0.06 255);
-  --popover-foreground: oklch(0.96 0.02 230);
-  --primary: oklch(0.82 0.11 225);
-  --primary-foreground: oklch(0.17 0.05 255);
-  --secondary: oklch(0.27 0.07 255);
-  --secondary-foreground: oklch(0.96 0.02 230);
-  --muted: oklch(0.25 0.06 255);
-  --muted-foreground: oklch(0.72 0.05 235);
-  --accent: oklch(0.88 0.08 220);
-  --accent-foreground: oklch(0.17 0.05 255);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.197 0.006 286);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.197 0.006 286);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.507 0.277 264);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.197 0.006 286);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.197 0.006 286);
+  --muted-foreground: oklch(0.72 0.005 260);
+  --accent: oklch(0.548 0.215 260);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.82 0.11 225 / 18%);
-  --input: oklch(0.82 0.11 225 / 25%);
-  --ring: oklch(0.82 0.11 225);
-  --gradient-glow: radial-gradient(60% 60% at 70% 20%, oklch(0.82 0.11 225 / 35%), transparent 70%);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.507 0.277 264);
+
+  /* Light ("paper") sections that alternate with the black ones. */
+  --paper: oklch(1 0 0);
+  --paper-foreground: oklch(0.145 0 0);
+  --paper-muted: oklch(0.45 0 0);
+  --paper-border: oklch(0.145 0 0 / 12%);
+  --paper-card: oklch(0.97 0.001 106);
+
+  --gradient-glow: radial-gradient(
+    55% 55% at 78% 12%,
+    oklch(0.507 0.277 264 / 45%),
+    transparent 72%
+  );
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @layer base {
@@ -107,8 +135,30 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 { font-family: var(--font-mono); }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
 }
 
-@utility bg-glow { background-image: var(--gradient-glow); }
+@utility bg-glow {
+  background-image: var(--gradient-glow);
+}
+
+/* Fades the strip's ends so the scrolling posters do not stop on a hard edge. */
+@utility mask-edges {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
