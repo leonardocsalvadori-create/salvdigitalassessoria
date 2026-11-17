@@ -8,12 +8,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Matchdays, identidades visuais e artes para atletas, clubes e marcas. Design com a energia do dia de jogo.",
+          "Matchdays, posts e artes para atletas, clubes e marcas. Design com a energia do dia de jogo.",
       },
       { property: "og:title", content: "Salv Digital Assessoria" },
       {
         property: "og:description",
-        content: "Matchdays, identidades e artes para atletas, clubes e marcas.",
+        content: "Matchdays, posts e artes para atletas, clubes e marcas.",
       },
     ],
   }),
@@ -49,7 +49,7 @@ function Index() {
                 Artes que fazem seu time <span className="text-primary">ser lembrado.</span>
               </h1>
               <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-                Matchdays, identidades e artes para atletas e clubes — do primeiro rascunho à peça
+                Matchdays, posts e artes para atletas e clubes — do primeiro rascunho à peça
                 pronta para publicar no dia do jogo.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
@@ -116,7 +116,7 @@ function Index() {
           <div className="mt-10 grid gap-8 md:grid-cols-2 md:items-end">
             <h2 className="text-4xl md:text-6xl">O que eu crio</h2>
             <p className="text-paper-muted">
-              Da arte do jogo à identidade do clube: peças pensadas para aparecer bem no feed e no
+              Da arte do jogo ao post do dia: peças pensadas para aparecer bem no feed e no
               dia da partida.
             </p>
           </div>

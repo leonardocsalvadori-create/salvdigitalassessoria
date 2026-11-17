@@ -36,7 +36,6 @@ export const arts: Art[] = [
 
 export const services = [
   { name: "Artes de jogo", desc: "Matchdays para clubes e atletas, prontos para postar no dia da partida." },
-  { name: "Identidade visual", desc: "Logo, escudo e paleta para times, atletas e marcas." },
   { name: "Posts e flyers", desc: "Artes para redes sociais, divulgação de eventos e campanhas." },
   { name: "Assessoria digital", desc: "Presença online organizada: conteúdo, agenda e visual coeso." },
 ];

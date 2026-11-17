@@ -8,13 +8,13 @@ export const Route = createFileRoute("/contrate")({
       {
         name: "description",
         content:
-          "Fale com a Salv Digital pelo WhatsApp e peça uma arte de jogo, identidade visual ou campanha para seu time.",
+          "Fale com a Salv Digital pelo WhatsApp e peça uma arte de jogo, um post ou uma campanha para seu time.",
       },
       { property: "og:title", content: "Nos contrate — Salv Digital Assessoria" },
       {
         property: "og:description",
         content:
-          "Fale com a Salv Digital pelo WhatsApp e peça uma arte de jogo, identidade visual ou campanha.",
+          "Fale com a Salv Digital pelo WhatsApp e peça uma arte de jogo, um post ou uma campanha.",
       },
     ],
   }),
@@ -54,19 +54,6 @@ function Contrate() {
             </li>
           ))}
         </ul>
-
-        <section className="mt-12 rounded-xl border border-border bg-card p-6 md:p-8">
-          <div className="flex flex-wrap items-baseline justify-between gap-4">
-            <h2 className="text-3xl md:text-4xl">Packs</h2>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              Sob consulta
-            </span>
-          </div>
-          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
-            Pacotes de artes para quem joga toda semana. Me diga a frequência dos seus jogos e eu
-            monto o pack com quantidade, prazo e valor.
-          </p>
-        </section>
 
         <div className="mt-14 flex flex-col items-center gap-4 text-center">
           <a
