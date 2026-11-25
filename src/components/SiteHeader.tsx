@@ -28,7 +28,7 @@ export function SiteHeader() {
             height={800}
             className="h-7 w-7 rounded-md object-cover sm:h-8 sm:w-8"
           />
-          <span className="font-mono text-sm font-bold tracking-widest text-foreground">
+          <span className="hidden font-mono text-sm font-bold tracking-widest text-foreground min-[380px]:inline">
             SALV<span className="text-primary">.</span>
           </span>
         </Link>
