@@ -9,5 +9,5 @@
 - [x] Services trimmed to the three the user confirmed: Artes de jogo, Posts e flyers, Assessoria digital.
 
 ## Waiting on the user
-- [ ] Confirm WhatsApp number DDD 11 (11) 92190-8975.
+- [x] WhatsApp (11) 92190-8975 and Behance salvdesign2 confirmed by user.
 - [ ] Pack content and prices if he ever wants them shown again.
