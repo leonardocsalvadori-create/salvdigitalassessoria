@@ -37,26 +37,19 @@ jobs:
         env:
           NITRO_PRESET: github-pages
 
-      - name: Check generated HTML
+      - name: Locate generated files
         run: |
-          ls -lah .output/public
-          wc -c .output/public/index.html
-          head -c 500 .output/public/index.html
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./.output/public
+          echo "=== Diretório raiz ==="
+          ls -lah
+          echo "=== Arquivos index.html ==="
+          find . -name index.html -not -path './node_modules/*'
+          echo "=== Pastas de saída ==="
+          find . -maxdepth 3 -type d \( -name public -o -name client -o -name dist \)
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        run: echo "Aguardando identificação da pasta correta de publicação."
