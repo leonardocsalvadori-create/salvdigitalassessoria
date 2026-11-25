@@ -37,19 +37,9 @@ jobs:
         env:
           NITRO_PRESET: github-pages
 
-      - name: Locate generated files
+      - name: Inspect dist output
         run: |
-          echo "=== Diretório raiz ==="
-          ls -lah
-          echo "=== Arquivos index.html ==="
-          find . -name index.html -not -path './node_modules/*'
-          echo "=== Pastas de saída ==="
-          find . -maxdepth 3 -type d \( -name public -o -name client -o -name dist \)
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to GitHub Pages
-        run: echo "Aguardando identificação da pasta correta de publicação."
+          echo "=== dist ==="
+          find dist -maxdepth 4 -type f -printf '%p (%s bytes)\n' | sort
+          echo "=== dist/client ==="
+          ls -lah dist/client
