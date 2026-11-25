@@ -34,6 +34,11 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Build
         run: npm run build
+              - name: Check generated HTML
+        run: |
+          ls -lah .output/public
+          wc -c .output/public/index.html
+          head -c 500 .output/public/index.html
         env:
           NITRO_PRESET: github_pages
 
