@@ -8,12 +8,10 @@ export default defineConfig({
       : "/",
   },
 
-  tanstackStart: {
-    server: { entry: "server" },
-    prerender: {
-      enabled: true,
-      crawlLinks: true,
-      failOnError: true,
-    },
+tanstackStart: {
+  server: { entry: "server" },
+  spa: {
+    enabled: true,
   },
+},
 });
