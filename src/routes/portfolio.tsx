@@ -11,12 +11,12 @@ export const Route = createFileRoute("/portfolio")({
       {
         name: "description",
         content:
-          "Matchdays e artes criadas pela Salv Digital para clubes, atletas e marcas: Corinthians, Santos, Grêmio, Chelsea e mais.",
+          "Matchdays e artes criadas pela Salv Digital para atletas e agências de atletas: Corinthians, Santos, Grêmio, Chelsea e mais.",
       },
       { property: "og:title", content: "Portfólio — Salv Digital Assessoria" },
       {
         property: "og:description",
-        content: "Matchdays e artes criadas pela Salv Digital para clubes, atletas e marcas.",
+        content: "Matchdays e artes criadas pela Salv Digital para atletas e agências de atletas.",
       },
     ],
   }),
@@ -64,7 +64,7 @@ function Portfolio() {
           <h1 className="text-5xl md:text-7xl">Portfólio</h1>
           <div className="md:text-right">
             <p className="text-muted-foreground">
-              Uma seleção de matchdays e artes para atletas, clubes e marcas.
+              Uma seleção de matchdays e artes para atletas e agências de atletas.
             </p>
             <a
               href={BEHANCE}

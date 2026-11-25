@@ -35,7 +35,20 @@ export const arts: Art[] = [
 ];
 
 export const services = [
-  { name: "Artes de jogo", desc: "Matchdays para clubes e atletas, prontos para postar no dia da partida." },
-  { name: "Posts e flyers", desc: "Artes para redes sociais, divulgação de eventos e campanhas." },
-  { name: "Assessoria digital", desc: "Presença online organizada: conteúdo, agenda e visual coeso." },
+  {
+    name: "Artes de jogo",
+    desc: "Matchdays do atleta, prontos para postar no dia da partida.",
+  },
+  {
+    name: "Posts e flyers",
+    desc: "Artes para redes sociais, eventos e campanhas do atleta.",
+  },
+  {
+    name: "Pacote para agências",
+    desc: "Artes em série para o elenco da sua agência, com padrão visual e entrega rápida.",
+  },
+  {
+    name: "Assessoria digital",
+    desc: "Presença online organizada: conteúdo, agenda e visual coeso para atleta e agência.",
+  },
 ];

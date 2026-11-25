@@ -4,16 +4,16 @@ import { PHONE, WHATSAPP, arts, services } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Salv Digital Assessoria — Design esportivo que posiciona" },
+      { title: "Salv Digital Assessoria — Design para atletas e agências" },
       {
         name: "description",
         content:
-          "Matchdays, posts e artes para atletas, clubes e marcas. Design com a energia do dia de jogo.",
+          "Matchdays, posts e artes para atletas e agências de atletas. Design com a energia do dia de jogo.",
       },
       { property: "og:title", content: "Salv Digital Assessoria" },
       {
         property: "og:description",
-        content: "Matchdays, posts e artes para atletas, clubes e marcas.",
+        content: "Matchdays, posts e artes para atletas e agências de atletas.",
       },
     ],
   }),
@@ -46,11 +46,11 @@ function Index() {
           <div className="mt-12 grid items-end gap-10 md:mt-16 md:grid-cols-[1.1fr_0.9fr]">
             <div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl">
-                Artes que fazem seu time <span className="text-primary">ser lembrado.</span>
+                Artes que fazem o atleta <span className="text-primary">ser lembrado.</span>
               </h1>
               <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-                Matchdays, posts e artes para atletas e clubes — do primeiro rascunho à peça
-                pronta para publicar no dia do jogo.
+                Matchdays, posts e artes para atletas e agências de atletas — do primeiro rascunho
+                à peça pronta para publicar no dia do jogo.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link
@@ -86,8 +86,7 @@ function Index() {
 
           <p className="mt-10 text-right font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             Role para ver ↓
-          </p>
-        </div>
+          </p>        </div>
       </section>
 
       <section aria-hidden className="mask-edges overflow-hidden border-y border-border py-5">
@@ -116,8 +115,8 @@ function Index() {
           <div className="mt-10 grid gap-8 md:grid-cols-2 md:items-end">
             <h2 className="text-4xl md:text-6xl">O que eu crio</h2>
             <p className="text-paper-muted">
-              Da arte do jogo ao post do dia: peças pensadas para aparecer bem no feed e no
-              dia da partida.
+              Da arte do jogo ao post do dia: peças pensadas para o atleta aparecer bem no feed e
+              para a agência entregar tudo no prazo.
             </p>
           </div>
 
@@ -145,10 +144,10 @@ function Index() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-5 py-20 text-center md:py-28">
           <h2 className="text-4xl md:text-6xl">
-            Vamos criar a próxima arte do seu time?
+            Vamos criar a próxima arte do seu atleta?
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Me chame no WhatsApp e conte a data do jogo.
+            Me chame no WhatsApp e conte a data do jogo ou o que a sua agência precisa.
           </p>
           <a
             href={WHATSAPP}

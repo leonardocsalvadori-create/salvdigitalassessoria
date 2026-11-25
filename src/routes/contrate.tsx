@@ -8,13 +8,13 @@ export const Route = createFileRoute("/contrate")({
       {
         name: "description",
         content:
-          "Fale com a Salv Digital pelo WhatsApp e peça uma arte de jogo, um post ou uma campanha para seu time.",
+          "Fale com a Salv Digital pelo WhatsApp e peça uma arte de jogo, um post ou um pacote para a sua agência.",
       },
       { property: "og:title", content: "Nos contrate — Salv Digital Assessoria" },
       {
         property: "og:description",
         content:
-          "Fale com a Salv Digital pelo WhatsApp e peça uma arte de jogo, um post ou uma campanha.",
+          "Fale com a Salv Digital pelo WhatsApp e peça uma arte de jogo, um post ou um pacote para a sua agência.",
       },
     ],
   }),
@@ -38,7 +38,7 @@ function Contrate() {
             Vamos criar <span className="text-primary">juntos?</span>
           </h1>
           <p className="text-muted-foreground md:text-right">
-            Me chame no WhatsApp e conte a data do jogo ou o que sua marca precisa. Respondo com
+            Me chame no WhatsApp e conte a data do jogo ou o que a sua agência precisa. Respondo com
             prazo e valor.
           </p>
         </div>
