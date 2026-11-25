@@ -35,7 +35,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NITRO_PRESET: github-pages
+          NITRO_PRESET: github_pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
