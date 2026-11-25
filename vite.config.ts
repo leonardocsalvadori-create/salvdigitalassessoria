@@ -8,10 +8,19 @@ export default defineConfig({
       : "/",
   },
 
-tanstackStart: {
-  server: { entry: "server" },
-  spa: {
-    enabled: true,
+  tanstackStart: {
+    server: { entry: "server" },
+    spa: {
+      enabled: true,
+    },
   },
-},
+
+  nitro: {
+    preset: "github-pages",
+    output: {
+      dir: "dist",
+      serverDir: "dist/server",
+      publicDir: "dist/client",
+    },
+  },
 });
